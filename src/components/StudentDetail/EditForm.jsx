@@ -39,11 +39,13 @@ function EditForm(props) {
   return (
     <>
       <h2>Edit Student</h2>
+       {/* editStudent.github_name is going into the object editStudent */}
+      <p>We are editing this student:{editStudent.github_name} with id: {editStudent.id}</p>
       <form onSubmit={handleSubmit}>
         <input
           onChange={(event) => handleChange(event)}
           placeholder='GitHub username'
-          value={editStudent.github_name}
+          value={editStudent.github_name} // important
         />
         <input type='submit' value='Update Student' />
       </form>

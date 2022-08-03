@@ -25,8 +25,22 @@ const studentList = (state = [], action) => {
 }
 
 // hold only the single student object being edited
+// type: 'EDIT_ONCHANGE', 
+// payload: { property: 'github_name', value: event.target.value }
 const editStudent = (state  = {}, action) => {
-
+    if (action.type === 'SET_EDIT_STUDENT'){
+        // action.payload is the object from the database 
+        return action.payload;
+    } else if (action.type === 'EDIT_ONCHANGE') {
+        return {
+            // spread - give me all of the object 
+            ...state,
+            // change this one in particular
+            [action.payload.property]: action.payload.value  
+        }
+    } else if  (action.type === 'EDIT_CLEAR') {
+        return {github_name: '' }
+    }
     return state;
 }
 

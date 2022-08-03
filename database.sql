@@ -8,3 +8,10 @@ CREATE TABLE students (
 
 -- some data
 INSERT INTO students (github_name) VALUES ('kdszafranski'), ('DoctorHowser');
+
+UPDATE stutends SET github_name = $1 WHERE id = $2;
+
+
+
+remember: Is it a adding a new item,  aka a POST?
+or is it an UPDATE to something, making it a PUT?
